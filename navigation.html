@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation</title>
+    <link rel="stylesheet" href="lightstyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+      body {
+        font-family: "Book Antique", palatino;
+        color: #333333;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #1f2937;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #666666;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .image-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 40px 0;
+        
+      }
+
+      /* .image-section img {
+        width: 80%;
+        height: auto;
+        margin: 0 auto 10px;
+        display: block;
+      } */
+
+      .image-section h3 {
+        text-align: center;
+        font-size: 2rem;
+        margin: 10px 0;
+      }
+
+      .map {
+        max-width: 100%;
+        height: auto;
+        border: 3px solid #333333;
+        margin-bottom: 20px;
+      }
+
+      .headings-descriptions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: justify;
+        padding: 0 20px;
+      }
+
+      .block {
+        width: 30%;
+        margin-bottom: 20px;
+      }
+      
+      .headings-descriptions h3 {
+        margin-top: 20px;
+        font-size: 1.4em;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 20px;
+        font-size: 1.2em;
+        text-align: center;
+      }
+
+      ul li {
+        margin-bottom: 10px;
+      }
+
+      .slider-container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        margin: 40px 0;
+      }
+
+      .slider,
+      .slider2 {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide,
+      .slide2 {
+        min-width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background: #1f2937;
+        color: #333333;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+      }
+
+      .slide img,
+      .slide2 img {
+        max-width: 30%;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .content {
+        max-width: 60%;
+        padding-left: 20px;
+      }
+
+      h2 {
+        margin: 0 0 10px 0;
+        font-size: 2.5rem;
+        color: #fff;
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #ccc;
+      }
+
+      .read-more {
+        display: inline-block;
+        margin-top: 10px;
+        color: #00aaff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .read-more:hover {
+        text-decoration: underline;
+      }
+
+      .prev,
+      .next,
+      .prev2,
+      .next2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-5%);
+        border: none;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        background: none;
+        color: #fff;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      .prev2 {
+        left: 10px;
+      }
+
+      .next2 {
+        right: 10px;
+      }
+
+      .prev:hover,
+      .next:hover,
+      .prev2:hover,
+      .next2:hover {
+        background: rgba(0, 0, 0, 0.1);
+        color: inherit;
+      }
+
+      @media (max-width: 768px) {
+        .block {
+          width: 100%;
+        }
+
+        .slide,
+        .slide2 {
+          flex-direction: column;
+          padding: 10px;
+        }
+
+        .content {
+          max-width: 100%;
+          padding-left: 0;
+          text-align: center;
+        }
+
+        .slide img,
+        .slide2 img {
+          max-width: 60%;
+          margin-bottom: 20px;
+        }
+
+        .image-section {
+          flex-direction: column;
+          text-align: justify;
+        }
+
+     
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+
+        .prev,
+        .next,
+        .prev2,
+        .next2 {
+          font-size: 1.2rem;
+        }
+
+        .slider-container {
+          margin: 20px 0;
+        }
+
+        .content {
+          padding-left: 10px;
+        }
+      }
+  
+
+          </style>
+  </head>
+  <body>
+    <my-header></my-header>
+    <div class="container">
+      <div class="image-section">
+        <img src="images/Navigation for website.jpg" alt="Navigation Map" class="map" />
+        <h3> NAVIGATION</h3>
+        <div class="headings-descriptions">
+          <div class="block">
+            <h3>
+              A Block <br />
+              - S&H Block:
+            </h3>
+            <ul>
+              <li>English Lab - A205</li>
+              <li>CAD Lab - A305</li>
+              <li>Physics Lab - A405</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3>
+              B Block <br />
+              - Civil Block:
+            </h3>
+            <ul>
+              <li>Chemistry Lab - B101</li>
+              <li>Civil Lab - B203</li>
+              <li>Mess</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3>
+              C Block <br />
+              - EEE Block:
+            </h3>
+            <ul>
+              <li>EEE Lab - C105 C205 C404</li>
+              <li>Canteen</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3>D Block <br />- Mech Block:</h3>
+            <ul>
+              <li>Engineering Mechanics Lab - D101 A</li>
+              <li>Machine Tools Lab - D101 B</li>
+              <li>Thermal Engineering Lab - D103</li>
+              <li>ME LAB - D301</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3>
+              New Block <br />
+              - SIEMENS:
+            </h3>
+            <ul>
+              <li>Civil Lab - Ground Floor</li>
+              <li>ECE Department - 2nd Floor</li>
+              <li>CSE Department - 3rd Floor</li>
+              <li>IT Department - 4th Floor</li>
+              <li>Hitech Lab - N303</li>
+              <li>VLSI - N209</li>
+              <li>Code Labs - N-503</li>
+              <li>Canteen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="heading">DAY-1 EVENTS</h2>
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide">
+            <img src="images/algoarena.jpg" alt="Event 1" />
+            <div class="content">
+              <h2>Algo Arena</h2>
+              <p>
+                Dive into epic DSA challenges, prove your coding skills, and
+                rise as the ultimate champion! Ready to conquer the arena? 🌟
+              </p>
+              <a href="techday1.html" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="images/treasuretroopers.jpg" alt="Event 1" />
+            <div class="content">
+              <h2>Treasure Troopers</h2>
+              <p>
+                Embark on an adventure of clues and challenges! Solve puzzles,
+                uncover hidden gems, and race to claim the ultimate treasure.
+                Ready for the hunt? 🗺💎
+              </p>
+              <a href="nontechday1.html" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="images/crypticclue.png" alt="Event 1" />
+            <div class="content">
+              <h2>Cryptic Clue</h2>
+              <p>
+                Unravel the mysteries in this mind-bending event! Decode hidden
+                messages, solve puzzles, and uncover the secrets. Can you crack
+                the cryptic clues? 🕵‍♂🧩
+              </p>
+              <a href="day1spotevent.html#spotevent1" class="read-more"
+                >Read more →</a
+              >
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="images/ballfiee.png" alt="Event 1" />
+            <div class="content">
+              <h2>Ball Flee</h2>
+              <p>
+                A fast-paced, fun-filled event where you dodge, dash, and
+                outmaneuver your way to victory! Ready to join the chase? 🏃‍♂🎉
+              </p>
+              <a href="day1spotevent.html#spotevent2" class="read-more"
+                >Read more →</a
+              >
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="images/breezeblast.png" alt="Event 1" />
+            <div class="content">
+              <h2>Breeze Blast</h2>
+              <p>
+                Get ready for a refreshing burst of fun! Quick challenges, cool
+                vibes, and nonstop excitement—this is your chance to chill and
+                thrill! 🌬🎊
+              </p>
+              <a href="day1spotevent.html#spotevent3" class="read-more"
+                >Read more →</a
+              >
+            </div>
+          </div>
+        </div>
+        <button class="prev" onclick="prevSlide()">
+          <i class="fa-solid fa-chevron-left" style="color: #ffffff"></i>
+        </button>
+        <button class="next" onclick="nextSlide()">
+          <i class="fa-solid fa-chevron-right" style="color: #ffffff"></i>
+        </button>
+      </div>
+  
+
+      <h2 class="heading">DAY-2 EVENTS</h2>
+      <div class="slider-container">
+        <div class="slider2">
+          <div class="slide2">
+            <img src="images/gameofcodes.jpg" alt="Event 1" />
+            <div class="content">
+              <h2>Game of Codes</h2>
+              <p>
+                Play, solve, and conquer in this coding adventure! Crack puzzles
+                and level up your skills for ultimate victory. 🎮🔍
+              </p>
+              <a href="techday2.html" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <div class="slide2">
+            <img src="images/riddlerampage.jpg" alt="Event 1" />
+            <div class="content">
+              <h2>Riddle Rampage</h2>
+              <p>
+                Dive into a whirlwind of crosswords, word searches, and memes!
+                Solve, laugh, and conquer the ultimate riddle challenge.
+              </p>
+              <a href="nontechday2.html" class="read-more">Read more →</a>
+            </div>
+          </div>
+
+          <div class="slide2">
+            <img src="images/fortunedice.png" alt="Event 1" />
+            <div class="content">
+              <h2>Fortune Dice</h2>
+              <p>
+                Roll the dice and let fate decide your path! A game of luck,
+                strategy, and surprises—are you ready to test your fortune? 🎲✨
+              </p>
+              <a href="day2spotevent.html#spotevent1" class="read-more"
+                >Read more →</a
+              >
+            </div>
+          </div>
+
+          <div class="slide2">
+            <img src="images/balloonbounty.png" alt="Event 1" />
+            <div class="content">
+              <h2>Balloon Bounty</h2>
+              <p>
+                Pop your way to prizes in this fun-filled event! Aim, burst, and
+                collect your bounty—who can claim the most balloons? 🎈💥
+              </p>
+              <a href="day2spotevent.html#spotevent2" class="read-more"
+                >Read more →</a
+              >
+            </div>
+          </div>
+
+          <div class="slide2">
+            <img src="images/breezeblast.png" alt="Event 1" />
+            <div class="content">
+              <h2>Color Craze</h2>
+              <p>
+                Dive into a vibrant world of color! Splash, match, and create
+                your way through colorful challenges. Ready to go wild
+                with color? 🎨
+              </p>
+              <a href="day2spotevent.html#spotevent3" class="read-more"
+                >Read more →</a
+              >
+            </div>
+          </div>
+        </div>
+        <button class="prev2" onclick="prevSlide2()">
+          <i class="fa-solid fa-chevron-left" style="color: #ffffff"></i>
+        </button>
+        <button class="next2" onclick="nextSlide2()">
+          <i class="fa-solid fa-chevron-right" style="color: #ffffff"></i>
+        </button>
+      </div>
+      
+    </div>
+    <my-footer></my-footer>
+    <script src="nav.js"></script>
+
+    <script>
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        const slides = document.querySelectorAll(".slide");
+        if (index >= slides.length) {
+          currentIndex = 0;
+        } else if (index < 0) {
+          currentIndex = slides.length - 1;
+        } else {
+          currentIndex = index;
+        }
+        const offset = -currentIndex * 100;
+        document.querySelector(
+          ".slider"
+        ).style.transform = `translateX(${offset}%)`;
+      }
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        showSlide(currentIndex - 1);
+      }
+
+      function showSlide2(index) {
+        const slides = document.querySelectorAll(".slide2");
+        if (index >= slides.length) {
+          currentIndex = 0;
+        } else if (index < 0) {
+          currentIndex = slides.length - 1;
+        } else {
+          currentIndex = index;
+        }
+        const offset = -currentIndex * 100;
+        document.querySelector(
+          ".slider2"
+        ).style.transform = `translateX(${offset}%)`;
+      }
+
+
+      function nextSlide2() {
+        showSlide2(currentIndex + 1);
+      }
+
+      function prevSlide2() {
+        showSlide2(currentIndex - 1);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TREASURE TROOPERS</title>
+    <link rel="stylesheet" href="lightstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <style>
+      body {
+        font-family: Book Antique, palatino;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 0px;
+        font-size: 3.5rem;
+        color: #1f2937;
+      }
+
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        min-height: 100vh;
+        padding: 0px 50px;
+        box-sizing: border-box;
+      }
+
+      .event-details {
+        flex: 1;
+        max-width: 50%;
+        padding: 40px;
+        padding-top: 30px;
+        text-align: left;
+      }
+
+      .event-details h1 {
+        font-size: 2.5rem;
+        color: #1f2937;
+        text-align: center;
+      }
+
+      .tagline p {
+        font-size: 1.5em;
+        color: #1f2937;
+        font-style: italic;
+        margin: 0px;
+        text-align: center;
+        padding-left: 200px;
+      }
+
+      .timmings {
+        display: flex;
+        align-items: center;
+        margin: 20px 0px;
+      }
+
+      .timmings p {
+        margin: 0;
+        margin-left: 10px;
+        font-size: 1.2em;
+        color: #1f2937;
+      }
+
+      .events-subheading {
+        color: #1f2937;
+        margin-bottom: 10px;
+        padding-left: 0vh;
+      }
+
+      .events-subheading h5 {
+        display: inline-block;
+        color: #1f2937;
+        padding-left: 0;
+        margin: 0;
+        font-size: 1.5em;
+      }
+
+      .events-subheading p {
+        display: inline-block;
+        color: #000;
+        font-size: 1.2rem;
+        margin: 0;
+      }
+
+      .event-description h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0px;
+        color: #1f2937;
+      }
+
+      .event-description p {
+        margin-bottom: 0px;
+        margin-right: 5%;
+        color: #000;
+        font-size: 1.3rem;
+        text-align: justify;
+      }
+
+      .slideshow-container {
+        max-width: 500px;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        margin: 20px auto;
+        /* background-color: #1f2937; */
+      }
+
+      #slideshow {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+      }
+
+      .slideshow-container img:first-child {
+        opacity: 1;
+      }
+
+      @media screen and (max-width: 1024px) {
+        section {
+          flex-direction: column-reverse;
+        }
+
+        .event-details {
+          max-width: 100%;
+          margin-bottom: 20px;
+          padding: 20px;
+        }
+
+        .events-subheading {
+          text-align: left;
+          padding-left: 0%;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        .event-details h1 {
+          font-size: 1.8em;
+        }
+
+        .tagline p {
+          font-size: 1.2em;
+          padding-left: 0;
+        }
+
+        .timmings p {
+          font-size: 1.1em;
+        }
+
+        .events-subheading h5 {
+          font-size: 1.1rem;
+        }
+
+        .events-subheading p {
+          font-size: 1.1rem;
+        }
+
+        .event-description h3 {
+          font-size: 1.2em;
+        }
+
+        .events-subheading {
+          text-align: left;
+          padding-left: 0%;
+        }
+
+        .event-description p {
+          font-size: 1.1rem;
+        }
+        .slideshow-container {
+          max-width: 100%;
+          height: auto;
+        }
+        #slideshow {
+          width: 100%;
+          height: auto;
+        }
+        .event-details {
+          padding: 0;
+        }
+        section {
+          padding: 0px 30px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .event-details h1 {
+          font-size: 1.5em;
+        }
+
+        .tagline {
+          font-size: 0.7em;
+        }
+
+        .tagline p {
+          padding-left: 0;
+        }
+
+        .timmings p {
+          font-size: 0.9em;
+        }
+
+        .event-description h3 {
+          font-size: 0.9em;
+        }
+
+        .events-subheading {
+          text-align: left;
+          padding-left: 0%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <my-header></my-header>
+    <h1>TREASURE TROOPERS</h1>
+    <div class="tagline">
+      <p>-"Chase To Conquer"</p>
+    </div>
+    <section style="min-height: 80vh">
+      <div class="event-details">
+        <div class="timmings">
+          <i class="fa-solid fa-calendar-days" style="color: #1f2937"></i>
+          <p class="event-date">22 August, Thursday, 1:00 PM</p>
+        </div>
+        <div class="events-subheading">
+          <h5>Event Type:</h5>
+          <p>Non-Technical Event</p>
+        </div>
+        <div class="events-subheading">
+          <h5>Team Size:</h5>
+          <p>2 (or) 3</p>
+        </div>
+        <div class="event-description">
+          <h3>About This Event</h3>
+          <br />
+          <p>
+            🌟 Prepare yourself for an electrifying adventure that will take you
+            on a journey through the heart of the campus! In this high-energy
+            treasure hunt, you’ll decode cryptic clues, navigate hidden paths,
+            and uncover secrets that could change the game. Every clue is a
+            stepping stone to a new discovery—whether you're exploring leafy
+            nooks near important spots 🌳 or tracking down hidden gems where
+            knowledge is king , each challenge will bring you closer to the
+            grand prize! 🏆<br />
+
+            But it’s not just about the destination—it’s about the thrill of the
+            chase! 🏃‍♂️ Rally your friends, form your dream team, and immerse
+            yourselves in an experience that will test your wits, creativity,
+            and teamwork. This isn’t your average game—it’s an adventure that
+            turns the familiar into the unknown 🌍, where every twist and turn
+            adds to the excitement. 🎉<br />
+
+            Are you ready to make history? 🏅 Join us for an unforgettable quest
+            filled with fun, challenges, and memories that will last long after
+            the final clue is solved. The ultimate treasure awaits—will you be
+            the one to claim it? 💎<br />
+
+            This version emphasizes the excitement, challenge, and teamwork
+            involved, making it more compelling for participants to join in.
+            <br />
+          </p>
+        </div>
+      </div>
+      <div class="slideshow-container">
+        <img
+          id="slideshow"
+          src="images/treasuretroopersd.jpg"
+          alt="Slideshow Image"
+        />
+      </div>
+    </section>
+
+    <my-footer></my-footer>
+    <script src="nav.js"></script>
+    <script>
+      const images = [
+        "images/treasuretroopers.jpg",
+        "images/treasuretroopersdoorposter.jpg",
+      ];
+      let currentImageIndex = 0;
+      const slideshow = document.getElementById("slideshow");
+
+      // Set the initial image and opacity
+      slideshow.src = images[currentImageIndex];
+      slideshow.style.opacity = 1;
+
+      function changeImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        slideshow.style.opacity = 0;
+        setTimeout(() => {
+          slideshow.src = images[currentImageIndex];
+          slideshow.style.opacity = 1;
+        }, 500);
+      }
+
+      setInterval(changeImage, 2000); // Change image every 2 seconds
+    </script>
+  </body>
+</html>

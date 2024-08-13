@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAY-1 SPOT EVENTS</title>
+  <link rel="stylesheet" href="lightstyle.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: Book Antique, palatino;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 0px;
+      font-size: 2.5rem;
+      color: #1f2937;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #1f2937;
+      margin-top: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      min-height: 100vh;
+      padding: 0px 50px;
+      box-sizing: border-box;
+    }
+
+    .event-details {
+      flex: 1;
+      max-width: 50%;
+      padding: 40px;
+      padding-top: 30px;
+      text-align: left;
+    }
+
+    .event-details h1 {
+      font-size: 2rem;
+      color: #1f2937;
+      text-align: center;
+    }
+
+    .tagline p {
+      font-size: 1.5em;
+      color: #1f2937;
+      font-style: italic;
+      margin: 0px;
+      text-align: center;
+    }
+
+    .timmings {
+      display: flex;
+      align-items: center;
+      margin: 20px 0px;
+    }
+
+    .timmings p {
+      margin: 0;
+      margin-left: 10px;
+      font-size: 1.2em;
+      color: #1f2937;
+    }
+
+    .events-subheading {
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .events-subheading h5 {
+      display: inline-block;
+      color: #1f2937;
+      padding-left: 0;
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    .events-subheading p {
+      display: inline-block;
+      color: #000;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .event-description h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0px;
+      color: #1f2937;
+    }
+
+    .event-description p {
+      margin-bottom: 0px;
+      color: #000;
+      font-size: 1.3rem;
+      text-align: justify;
+    }
+
+    .event-image {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .spotevent2 section {
+      flex-direction: row-reverse;
+    }
+
+    @media screen and (max-width: 1024px) {
+      section {
+        flex-direction: column-reverse;
+      }
+
+      .event-details {
+        max-width: 100%;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+
+      .events-subheading {
+        text-align: left;
+        padding-left: 0%;
+      }
+
+      .spotevent2 section {
+        flex-direction: column-reverse;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .event-details h1 {
+        font-size: 1.8em;
+      }
+
+      .tagline p {
+        font-size: 1.2em;
+        padding-left: 0;
+      }
+
+      .timmings p {
+        font-size: 1.1em;
+      }
+
+      .events-subheading h5 {
+        font-size: 1.1rem;
+      }
+
+      .events-subheading p {
+        font-size: 1.1rem;
+      }
+
+      .event-description h3 {
+        font-size: 1.2em;
+      }
+
+      .events-subheading {
+        text-align: left;
+        padding-left: 0%;
+      }
+
+      .event-description p {
+        font-size: 1.1rem;
+      }
+      .event-details {
+          padding: 0;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .event-details h1 {
+        font-size: 1.5em;
+      }
+
+      .tagline {
+        font-size: 0.7em;
+      }
+
+      .tagline p {
+        padding-left: 0;
+      }
+
+      .timmings p {
+        font-size: 0.9em;
+      }
+
+      .event-description h3 {
+        font-size: 0.9em;
+      }
+
+      .events-subheading {
+        text-align: left;
+        padding-left: 0%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <my-header></my-header>
+
+  <div class="day1">
+    <h2>DAY-1 SPOT EVENTS</h2>
+    <div class="spotevent1" id="spotevent1">
+      <h1>CRYPTIC CLUE</h1>
+      <div class="tagline">
+        <p>-"Adventure Awaits"</p>
+      </div>
+      <section style="min-height: 80vh">
+        <div class="event-details">
+          <div class="timmings">
+            <i class="fa-solid fa-calendar-days" style="color: #1f2937"></i>
+            <p class="event-date">22 August, Thursday</p>
+          </div>
+          <div class="events-subheading">
+            <h5>Event Type:</h5>
+            <p>Spot Event</p>
+          </div>
+          <div class="events-subheading">
+            <h5>Team Size:</h5>
+            <p>1</p>
+          </div>
+          <div class="event-description">
+            <h3>About This Event</h3>
+            <br />
+            <p>
+              This is a fun and engaging word-guessing game where participants must deduce the word based on a series of
+              images. These images could be blurry, or even a combination of both. The participant who guesses the most
+              words correctly wins the game.
+
+            </p>
+          </div>
+        </div>
+        <img src="images/crypticclue.png" alt="Event Image" class="event-image" />
+      </section>
+    </div>
+    <div></div>
+    <div class="spotevent2" id="spotevent2">
+      <h1>BALL FLEE </h1>
+      <div class="tagline">
+        <p>-"Spot The Misfit"</p>
+      </div>
+      <section style="min-height: 80vh">
+        <div class="event-details">
+          <div class="timmings">
+            <i class="fa-solid fa-calendar-days" style="color: #1f2937"></i>
+            <p class="event-date">22 August, Thursday</p>
+          </div>
+          <div class="events-subheading">
+            <h5>Event Type:</h5>
+            <p>Spot Event</p>
+          </div>
+          <div class="events-subheading">
+            <h5>Team Size:</h5>
+            <p>1</p>
+          </div>
+          <div class="event-description">
+            <h3>About This Event</h3>
+            <br />
+            <p>
+              An exciting game where participants are given a board filled with balls. The goal is to remove all the
+              balls from the board without allowing the odd-colored ball to fall through the hole in the middle. The
+              participant who clears the board first is declared the winner.
+            </p>
+          </div>
+        </div>
+        <img src="images/ballfiee.png" alt="Event Image" class="event-image" />
+      </section>
+    </div>
+
+
+    <div class="spotevent3" id="spotevent3">
+      <h1>BREEZE BLAST</h1>
+      <div class="tagline">
+        <p>-"Blow, Strike,<br> Win The Fight!"</p>
+      </div>
+      <section style="min-height: 80vh">
+        <div class="event-details">
+          <div class="timmings">
+            <i class="fa-solid fa-calendar-days" style="color: #1f2937"></i>
+            <p class="event-date">22 August, Thursday</p>
+          </div>
+          <div class="events-subheading">
+            <h5>Event Type:</h5>
+            <p>Spot Event</p>
+          </div>
+          <div class="events-subheading">
+            <h5>Team Size:</h5>
+            <p>1</p>
+          </div>
+          <div class="event-description">
+            <h3>About This Event</h3>
+            <br />
+            <p>
+              Participants compete simultaneously in this thrilling game. Each player inflates a balloon and then uses
+              the released air to knock cups off a table. The first player to clear all the cups from the table wins.
+
+            </p>
+          </div>
+        </div>
+        <img src="images/breezeblast.png" alt="Event Image" class="event-image" />
+      </section>
+    </div>
+
+  </div>
+
+
+
+  <my-footer></my-footer>
+  <script src="nav.js"></script>
+</body>
+
+</html>
