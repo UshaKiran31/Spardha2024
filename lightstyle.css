@@ -597,12 +597,18 @@ button:hover {
     width: 100%;
     padding-bottom: 56.25%; /* Aspect ratio 16:9 */
   }
+  .video-description {
+    font-size: 1em;
+  }
 
   .text-container {
     padding-top: 10px;
   }
   .about-section {
     margin: 20px ;
+  }
+   .about-section p {
+    font-size: 1rem;
   }
   .footer {
     flex-direction: column;
